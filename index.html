@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+        <h1 id="title">Weather App</h1>
+        <form>
+            <input type="text" id="location" placeholder="Location" required>
+            <button type="submit" id="btn">Get Weather</button>
+        </form>
+        <div id="displayer">
+            <div id="name-and-info">
+                <div id="name"></div>
+                <div id="info">
+                </div>
+            </div>
+            <div id="weather-details">
+                <table>
+                    <thead>
+                        <th>Time</th>
+                        <th>Weather</th>
+                        <th>Temperature</th>
+                        <th>Feels Like</th>
+                        <th>Clouds</th>
+                        <th>Humidity</th>
+                        <th>Atmospheric Pressure</th>
+                        <th>Wind Velocity</th>
+                        <th>Wind Direction</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>            
+            <button onclick="moreData()" id="more-btn">More Data</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
