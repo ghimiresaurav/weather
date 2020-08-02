@@ -15,25 +15,6 @@
     text-align: center;
     margin-top: 20px;
 }
-form{
-    position: absolute;
-    width: 30%;
-    left: 70%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-}
-input{
-    width: 70%;
-    height: 80%;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid cyan;
-    transition: 350ms;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-}
 input:focus{
     border-bottom: 2px solid royalblue;
 }
@@ -100,20 +81,4 @@ input:focus{
     top: 80px;
     left: 0;
     height: 100px;
-}
-table{
-    position: absolute;
-    margin-top: 15px;
-    width: 90%;
-    left: 5%;
-    text-align: center;
-}
-#more-btn{
-    position: absolute;
-    top: 100%;
-    left: 90%;
-    height: auto;
-    width: auto;
-    padding: 5px 10px;
-    margin-top: 10px;
 }
