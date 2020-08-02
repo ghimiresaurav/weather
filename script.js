@@ -1,8 +1,20 @@
+const table = document.querySelector("table");
 const tbody = document.querySelector("tbody");
-const disp = document.getElementById("displayer");
+const input = document.querySelector("input");
 const form = document.querySelector("form");
+const disp = document.getElementById("displayer");
 const loc = document.getElementById("location");
+const moreBtn = document.getElementById("more-btn");
 let apikey = "147476f08e5f6ea436a262512e7efd13", data, count = 1, dispHeight = 220, risk;
+
+const success = (pos) =>{
+    const coord = pos.coords;
+    lat = coord.latitude;
+    lon = coord.longitude;
+    getWeather(lat, lon);
+}
+const error = (err) => console.log(`ERROR: ${err.code}: ${err.message}`);
+navigator.geolocation.getCurrentPosition(success, error);
 
 form.addEventListener("submit", function(){
     if(loc.value != ""){
@@ -30,7 +42,7 @@ function getWeather(lat, lon){
         setTimeout(ensure, 500);
 })();
 function displayer(){
-    document.getElementById("name").innerText = `${data.timezone}`;
+    document.getElementById("name").innerText = `Time Zone: ${data.timezone}`;
     let weatherIcon = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`;  
     const riseTime = new Date(data.current.sunrise*1000);
     const setTime = new Date(data.current.sunset*1000);
@@ -138,15 +150,34 @@ function uvIndex(index){
         return "#ee82ee";
     }
 }  
-const success = (pos) =>{
-    const coord = pos.coords;
-    lat = coord.latitude;
-    lon = coord.longitude;
-    getWeather(lat, lon);
-    console.log(`Your current position is:
-Latitude: ${lat}
-Longitude: ${lon}
-More or Less: ${coord.accuracy}`);
-}
-const error = (err) => console.log(`ERROR: ${err.code}: ${err.message}`);
-navigator.geolocation.getCurrentPosition(success, error);
+
+table.style.position = "absolute";
+table.style.left = "5%";
+table.style.width = "90%";
+table.style.textAlign = "center";
+table.style.marginTop = "15px";
+
+input.style.width = "70%";
+input.style.height = "80%";
+input.style.outline = "none";
+input.style.border = "none";
+input.style.transition = "350ms";
+input.style.fontFamily = "'Poppins', sans-serif";
+input.style.fontSize = "15px";
+input.style.borderBottom = "2px solid cyan";
+
+form.style.position = "absolute";
+form.style.width = "30%";
+form.style.left = "70%";
+form.style.height = "40px";
+form.style.display = "flex";
+form.style.alignItems = "center";
+form.style.fontSize = "15px";
+
+moreBtn.style.position = "absolute";
+moreBtn.style.top = "100%";
+moreBtn.style.left = "90%";
+moreBtn.style.height = "auto";
+moreBtn.style.width = "auto";
+moreBtn.style.padding = "5px 10px";
+moreBtn.style.marginTop = "10px";
