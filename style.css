@@ -7,33 +7,29 @@
     position: relative;
     height: 100%;
     width: 100%;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font: 15px 'Poppins', sans-serif;
 }
 #title{
     font-family: 'Montserrat', serif;
     text-align: center;
     margin-top: 20px;
 }
+input{
+    height: 80%;
+    width: 70%;
+    outline: none;
+    border: none;
+    transition: 350ms; 
+    border-bottom: 2px solid cyan;
+    font: 15px 'Poppins', sans-serif;
+}
 input:focus{
     border-bottom: 2px solid royalblue;
 }
 #btn{
     width: 25%;
-    line-height: 25px;
     margin-left: 15px;
-    font-family: 'Poppins', sans-serif;
-}
-#displayer{
-    position: absolute;
-    width: 90%;
-    left: 5%;
-    background-color: rgb(180, 195, 206);
-    height: 220px;
-    top: 150px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    font: 13px/25px 'Poppins', sans-serif;
 }
 #name-and-info{
     height: 80px;
@@ -44,11 +40,8 @@ input:focus{
 }
 #name{
     width: 80%;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    line-height: 80px;
     margin-left: 20px;
-    font-size: 25px;
+    font: 700 25px/80px 'Montserrat', sans-serif;
 }
 #info{
     height: 75%;
