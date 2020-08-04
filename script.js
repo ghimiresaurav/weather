@@ -62,6 +62,8 @@ function displayer(){
     things.innerHTML = `<div id="rise"><strong>Sunrise: </strong>${riseTime.getHours()}:${riseTime.getMinutes()} AM</div>
                         <div id="set"><strong>Sunset: </strong>${setTime.getHours()-12}:${setTime.getMinutes()} PM</div>
                         <div id="uvi"><strong>Ultra Violet Index:</strong><div id="uvi-color" style="background-color:${uvIndex(data.current.uvi)}">${risk}</div></div>`;
+    disp.style.visibility = "visible";
+    disp.style.opacity = "1";    
     document.getElementById("info").append(things);   
 }
 function moreData(){
@@ -157,14 +159,17 @@ table.style.width = "90%";
 table.style.textAlign = "center";
 table.style.marginTop = "15px";
 
-input.style.width = "70%";
-input.style.height = "80%";
-input.style.outline = "none";
-input.style.border = "none";
-input.style.transition = "350ms";
-input.style.fontFamily = "'Poppins', sans-serif";
-input.style.fontSize = "15px";
-input.style.borderBottom = "2px solid cyan";
+disp.style.position = "absolute";
+disp.style.height = "220px";
+disp.style.width = "90%";
+disp.style.left = "5%";
+disp.style.top = "150px";
+disp.style.borderRadius = "10px";
+disp.style.display = "flex";
+disp.style.flexDirection = "column";
+disp.style.backgroundColor = "#b4c3ce";
+disp.style.visibility = "hidden";
+disp.style.opacity = "0";
 
 form.style.position = "absolute";
 form.style.width = "30%";
